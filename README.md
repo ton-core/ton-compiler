@@ -1,8 +1,8 @@
 # TON COMPILER
 
-[![Version npm](https://img.shields.io/npm/v/ton-compiler.svg?logo=npm)](https://www.npmjs.com/package/ton-compiler)
-
 Packaged Func compiler for TON smart contracts.
+
+[![Version npm](https://img.shields.io/npm/v/ton-compiler.svg?logo=npm)](https://www.npmjs.com/package/ton-compiler)
 
 ## Features
 
@@ -14,6 +14,7 @@ Packaged Func compiler for TON smart contracts.
 ## Supported Versions
 - `latest` (default) - by default library and cli use latest available compiler
 - `v2022.10`
+- `v2022.12`
 - `legacy` - Legacy compiler
 
 ## Install
