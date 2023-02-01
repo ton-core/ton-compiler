@@ -710,6 +710,240 @@ Object {
 }
 `;
 
+exports[`ton-compiler should compile source with v2023.01 compiler 1`] = `
+Object {
+  "fift": "PROGRAM{
+  DECLPROC recv_internal
+  DECLPROC recv_external
+  recv_internal PROC:<{
+    DROP
+  }>
+  recv_external PROC:<{
+    9 PUSHPOW2
+    LDSLICEX
+    DUP
+    32 LDU
+    c4 PUSH
+    CTOS
+    32 LDU
+    256 LDU
+    ENDS
+    s3 s1 XCPU
+    EQUAL
+    33 THROWIFNOT
+    s0 s3 XCHG
+    HASHSU
+    s0 s4 s2 XC2PU
+    CHKSIGNU
+    34 THROWIFNOT
+    ACCEPT
+    s2 s0 XCPU
+    SREFS
+    IF:<{
+      8 LDU
+      LDREF
+      s0 s2 XCHG
+      SENDRAWMSG
+    }>
+    ENDS
+    INC
+    NEWC
+    32 STU
+    256 STU
+    ENDC
+    c4 POP
+  }>
+}END>c
+",
+  "log": "",
+  "ok": true,
+  "output": Object {
+    "data": Array [
+      181,
+      238,
+      156,
+      114,
+      1,
+      1,
+      4,
+      1,
+      0,
+      79,
+      0,
+      1,
+      20,
+      255,
+      0,
+      244,
+      164,
+      19,
+      244,
+      188,
+      242,
+      200,
+      11,
+      1,
+      2,
+      1,
+      32,
+      2,
+      3,
+      0,
+      4,
+      210,
+      48,
+      0,
+      110,
+      242,
+      131,
+      8,
+      215,
+      24,
+      32,
+      211,
+      31,
+      237,
+      68,
+      208,
+      211,
+      31,
+      211,
+      255,
+      209,
+      81,
+      49,
+      186,
+      242,
+      161,
+      3,
+      249,
+      1,
+      84,
+      16,
+      66,
+      249,
+      16,
+      242,
+      162,
+      248,
+      0,
+      81,
+      32,
+      215,
+      74,
+      150,
+      211,
+      7,
+      212,
+      2,
+      251,
+      0,
+      222,
+      209,
+      164,
+      200,
+      203,
+      31,
+      203,
+      255,
+      201,
+      237,
+      84,
+    ],
+    "type": "Buffer",
+  },
+}
+`;
+
+exports[`ton-compiler should compile source with v2023.01 compiler 2`] = `
+Object {
+  "fift": "PROGRAM{
+  DECLPROC do_something
+  DECLPROC do_another
+  DECLPROC get_first
+  DECLPROC get_second
+  DECLPROC do_mutate
+  DECLPROC main
+  DECLGLOBVAR ctx
+  do_something PROC:<{
+    DUP
+  }>
+  do_another PROC:<{
+    ADD
+  }>
+  get_first PROCINLINE:<{
+    DROP
+  }>
+  get_second PROCINLINE:<{
+    NIP
+  }>
+  do_mutate PROC:<{
+    s2 s1 PUXC
+    ADD
+    -ROT
+    ADD
+  }>
+  main PROC:<{
+    1 PUSHINT
+    do_something CALLDICT
+    PAIR
+    ctx SETGLOB
+  }>
+}END>c
+",
+  "log": "",
+  "ok": true,
+  "output": Object {
+    "data": Array [
+      181,
+      238,
+      156,
+      114,
+      1,
+      1,
+      4,
+      1,
+      0,
+      32,
+      0,
+      1,
+      20,
+      255,
+      0,
+      244,
+      164,
+      19,
+      244,
+      188,
+      242,
+      200,
+      11,
+      1,
+      2,
+      2,
+      210,
+      2,
+      3,
+      0,
+      15,
+      28,
+      124,
+      0,
+      91,
+      192,
+      190,
+      24,
+      96,
+      0,
+      3,
+      8,
+      32,
+    ],
+    "type": "Buffer",
+  },
+}
+`;
+
 exports[`ton-compiler should compile with errors with legacy compiler 1`] = `
 Object {
   "fift": null,
@@ -737,6 +971,16 @@ Object {
 `;
 
 exports[`ton-compiler should compile with errors with v2022.12 compiler 1`] = `
+Object {
+  "fift": null,
+  "log": "Func compilation error: /working/src/tests/test_bug.fc:27:1: error: \`;\` expected instead of \`}\`
+  }",
+  "ok": false,
+  "output": null,
+}
+`;
+
+exports[`ton-compiler should compile with errors with v2023.01 compiler 1`] = `
 Object {
   "fift": null,
   "log": "Func compilation error: /working/src/tests/test_bug.fc:27:1: error: \`;\` expected instead of \`}\`

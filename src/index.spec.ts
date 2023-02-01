@@ -36,4 +36,14 @@ describe('ton-compiler', () => {
     let compiled = await compileContract({ files: [path.resolve(__dirname, 'tests', 'test_bug.fc')], version: 'v2022.12' });
     expect(compiled).toMatchSnapshot();
   });
+  it('should compile source with v2023.01 compiler', async () => {
+    let compiled = await compileContract({ files: [path.resolve(__dirname, 'tests', 'test.fc')], version: 'v2022.12' });
+    expect(compiled).toMatchSnapshot();
+    compiled = await compileContract({ files: [path.resolve(__dirname, 'tests', 'global.fc')], version: 'v2022.12' });
+    expect(compiled).toMatchSnapshot();
+  });
+  it('should compile with errors with v2023.01 compiler', async () => {
+    let compiled = await compileContract({ files: [path.resolve(__dirname, 'tests', 'test_bug.fc')], version: 'v2023.01' });
+    expect(compiled).toMatchSnapshot();
+  });
 });
