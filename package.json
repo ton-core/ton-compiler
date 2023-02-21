@@ -10,9 +10,7 @@
     "dist/**/*",
     "bin/**/*"
   ],
-  "bin": {
-    "ton-compiler": "./bin/ton-compiler"
-  },
+  "bin": "./bin/ton-compiler",
   "scripts": {
     "release": "rm -fr dist && tsc && jest && yarn publish"
   },
