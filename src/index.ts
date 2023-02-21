@@ -48,7 +48,9 @@ export async function compileContract(opts: { files: string[], version?: Version
         return await legacyBuild({ files: files, stdlib, workdir });
     } else if (version === 'v2022.10') {
         return await wasmFsBuild({ files: files, version, stdlib, workdir });
-    } else if (version === 'v2022.12' || version === 'v2023.01') {
+    } else if (version === 'v2022.12') {
+        return await wasmBuild({ files: files, version, stdlib, workdir });
+    } else if (version === 'v2023.01') {
         return await wasmBuild({ files: files, version, stdlib, workdir });
     } else {
         throw Error('Unsupported compiler version ' + version);

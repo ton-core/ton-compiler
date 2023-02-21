@@ -50,8 +50,8 @@ export async function wasmBuild(opts: { version: 'v2022.10' | 'v2022.12' | 'v202
         CompilerModule = CompilerModule_2022_12;
         FuncFiftLibWasm = FuncFiftLibWasm_2022_12;
     } else if (opts.version === 'v2023.01') {
-        CompilerModule = CompilerModule_2022_12;
-        FuncFiftLibWasm = FuncFiftLibWasm_2022_12;
+        CompilerModule = CompilerModule_2023_01;
+        FuncFiftLibWasm = FuncFiftLibWasm_2023_01;
     } else {
         throw Error('Unknown compiler version: ' + opts.version);
     }
