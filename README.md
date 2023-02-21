@@ -15,6 +15,7 @@ Packaged Func compiler for TON smart contracts.
 - `latest` (default) - by default library and cli use latest available compiler
 - `v2022.10`
 - `v2022.12`
+- `v2023.01`
 - `legacy` - Legacy compiler
 
 ## Install
