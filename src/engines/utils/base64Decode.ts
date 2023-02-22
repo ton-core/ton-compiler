@@ -1,3 +1,11 @@
+/**
+ * Copyright (c) Whales Corp. 
+ * All Rights Reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 // Credits: https://developer.mozilla.org/en-US/docs/Glossary/Base64#solution_2_–_rewriting_atob_and_btoa_using_typedarrays_and_utf-8
 
 function b64ToUint6(nChr: number) {

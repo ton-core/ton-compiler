@@ -4,7 +4,7 @@
   "description": "TON compiler binaries",
   "main": "dist/index.js",
   "repository": "https://github.com/ton-core/ton-compiler.git",
-  "author": "Steve Korshakov <steve@korshakov.com>",
+  "author": "Whales Corp. <developers@whalescorp.com>",
   "license": "MIT",
   "files": [
     "dist/**/*",
